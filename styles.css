@@ -1,3 +1,29 @@
+:root {
+  --bg: #00004d;
+  --moon-bg: #ffff;
+  --moon-shade1: #206995b3;
+  --moon-shade2: #20699580;
+  --moon-shade3: #2069954d;
+  --moon-shade4: #2069951a;
+  --eclipse: #100f0f;
+  --eclipse-border: #ffa500;
+  --grass: #3a3056;
+  --grass1: #221c33;
+  --grass2: #191526;
+  --mountain-one: #5e4d89;
+  --mountain-two: #513c89;
+  --satellite: #ffedd1;
+  --satellite-one: #262938;
+  --satellite-shadow: #262938;
+  --rotation-first: #c6836466;
+  --rotation-second: #412104b5;
+  --rotation-third: #000000;
+  --rotation-fourth: #845a4682;
+  --clr1: #b54040;
+  --clr2: #cd6d3d;
+  --clr3: #e6993a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +31,7 @@
 body {
   height: 0;
   width: 0;
-  background-color: #00004d;
+  background-color: var(--bg);
 }
 
 .wrapper {
@@ -16,16 +42,28 @@ body {
 
 .moon {
   position: relative;
-  height: 160px;
-  width: 160px;
-  top: 30%;
+  height: 180px;
+  width: 180px;
+  top: 20%;
   left: 20%;
-  transform: translate(-50%, -50%);
-  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--moon-bg);
   border-radius: 50%;
-  box-shadow: 0 0 20px white, 0 0 1px 15px rgba(32, 105, 149, 0.7),
-    0 0 1px 35px rgba(32, 105, 149, 0.5), 0 0 1px 50px rgba(32, 105, 149, 0.3),
-    0 0 1px 70px rgba(32, 105, 149, 0.1);
+  box-shadow: 0 0 20px var(--moon-bg), 0 0 1px 15px var(--moon-shade1),
+    0 0 1px 35px var(--moon-shade2), 0 0 1px 50px var(--moon-shade3),
+    0 0 1px 70px var(--moon-shade4);
+}
+
+.moon:hover {
+  background: var(--eclipse);
+  border-top: solid 3px var(--eclipse-border);
+  border-left: solid 3px var(--eclipse-border);
+  border-bottom: solid 3px var(--eclipse-border);
+  border-right: solid 3px var(--eclipse-border);
+  border-radius: 100px;
+  box-shadow: 0 0 50px var(--eclipse-border);
 }
 
 /* stars */
@@ -33,12 +71,13 @@ body {
 .str {
   height: 3px;
   width: 3px;
-  background-color: white;
+  background-color: var(--moon-bg);
   position: absolute;
   border-radius: 0px;
   opacity: 0.2;
   animation: blink 1s infinite;
 }
+
 @keyframes blink {
   50% {
     opacity: 1;
@@ -115,19 +154,62 @@ body {
   top: 44px;
   animation-delay: 1s;
 }
+.sr15 {
+  left: 500px;
+  top: 40px;
+  animation-delay: 1s;
+}
+.sr16 {
+  left: 459px;
+  top: 50px;
+  animation-delay: 0.35s;
+}
+.sr17 {
+  left: 558px;
+  top: 44px;
+  animation-delay: 0.85s;
+}
+.sr18 {
+  left: 480px;
+  top: 60px;
+  animation-delay: 0.2s;
+}
+.sr19 {
+  left: 527px;
+  top: 80px;
+  animation-delay: 0.4s;
+}
+.sr20 {
+  left: 540px;
+  top: 140px;
+  animation-delay: 1s;
+}
+.sr21 {
+  left: 580px;
+  top: 135px;
+  animation-delay: 0.87s;
+}
+.sr22 {
+  left: 680px;
+  top: 80px;
+  animation-delay: 0.5s;
+}
+.sr23 {
+  left: 610px;
+  top: 90px;
+  animation-delay: 0.69s;
+}
 
 /* shooting star*/
 
 .star {
   height: 4px;
   width: 8px;
-  position: absolute;
-  background: white;
-  right: 0px;
-  top: 0px;
+  position: relative;
+  background: var(--moon-bg);
   animation: st 5s linear infinite;
   opacity: 0.8;
-  box-shadow: 10px 1px 10px white;
+  box-shadow: 10px 1px 10px var(--moon-bg);
 }
 @keyframes st {
   10% {
@@ -138,14 +220,66 @@ body {
   }
 }
 
+.st1 {
+  left: 70vmax;
+  bottom: 190px;
+  animation-delay: 0.2s;
+}
+.st2 {
+  left: 75vmax;
+  bottom: 190px;
+  animation-delay: 0.5s;
+}
+.st3 {
+  left: 80vmax;
+  bottom: 210px;
+  animation-delay: 0.8s;
+}
+.st4 {
+  left: 85vmax;
+  bottom: 200px;
+  animation-delay: 0.1s;
+}
+.st5 {
+  left: 90vmax;
+  bottom: 200px;
+  animation-delay: 0s;
+}
+.st6 {
+  left: 99vmax;
+  bottom: 150px;
+  animation-delay: 0.1s;
+}
+.st7 {
+  left: 99vmax;
+  bottom: 220px;
+  animation-delay: 0.4s;
+}
+.st8 {
+  left: 99vmax;
+  bottom: 300px;
+  animation-delay: 0.1s;
+}
+.st9 {
+  left: 99vmax;
+  bottom: 170px;
+  animation-delay: 0.5s;
+}
+.st10 {
+  left: 99vmax;
+  bottom: 60px;
+  animation-delay: 0.2s;
+}
+
 /* Grass */
 
 .grass {
+  display: flex;
   width: 100%;
-  height: 40%;
+  height: 30%;
   position: absolute;
   bottom: 0px;
-  background: #3a3056;
+  background: var(--grass);
   -webkit-clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%);
   z-index: 5;
@@ -156,7 +290,7 @@ body {
   height: 85%;
   position: absolute;
   bottom: 0px;
-  background: #221c33;
+  background: var(--grass1);
   z-index: 6;
 }
 
@@ -165,7 +299,7 @@ body {
   height: 80%;
   position: absolute;
   bottom: 0px;
-  background: #191526;
+  background: var(--grass2);
   z-index: 7;
   -webkit-clip-path: polygon(0 19%, 100% 5%, 100% 100%, 0% 100%);
   clip-path: polygon(0 19%, 100% 5%, 100% 100%, 0% 100%);
@@ -173,55 +307,55 @@ body {
 
 /* Mountains */
 
-.back-mountain {
+.mountain-one {
+  width: 70%;
+  height: 30%;
   position: absolute;
-  height: 40vmin;
-  width: 42vmin;
-  background-color: #251d55;
-  top: 25%;
-  left: 80%;
-  clip-path: polygon(0% 100%, 51% 0%, 100% 57%, 100% 100%);
-  /* transform: rotate(-46deg); */
+  bottom: 27%;
+  right: 0%;
+  background: var(--mountain-one);
+  -webkit-clip-path: polygon(63% 10%, 100% 40%, 100% 100%, 0% 100%);
+  clip-path: polygon(63% 10%, 100% 40%, 100% 100%, 0% 100%);
+  z-index: 2;
 }
 
-.back-mountain-2 {
+.mountain-two {
+  width: 70%;
+  height: 25%;
   position: absolute;
-  height: 40vmin;
-  width: 50vmin;
-  background-color: #251d55;
-  top: 25%;
-  left: 65%;
-  /* transform: rotate(-46deg); */
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  bottom: 27%;
+  right: 0%;
+  background: var(--mountain-two);
+  -webkit-clip-path: polygon(82% 52%, 0% 100%, 100% 100%);
+  clip-path: polygon(82% 52%, 0% 100%, 100% 100%);
+  z-index: 4;
 }
 
 .satellite,
 .satellite::after {
   content: "";
   position: absolute;
-  width: 5em;
-  height: 5em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
-  /*   z-index: 100; */
 }
 
 .satellite {
-  background-color: #ffedd1;
-  box-shadow: -2em 0 5em -1em white;
+  background-color: var(--satellite);
+  box-shadow: -2em 0 5em -1em var(--moon-bg);
   transition: 250ms;
   overflow: hidden;
   left: 32em;
-  /*   z-index: -1; */
-  transform: rotate(20deg);
+  transform: rotate(25deg);
 
-  animation: test 5s infinite ease-in-out;
+  animation: rotation 5s infinite ease-in-out;
 }
 
 .satellite::after {
-  background-color: #262938;
-  width: 2.5em;
-  left: 2.5em;
-  box-shadow: 0 0 0.75em 0.95em #262938;
+  background-color: var(--satellite-one);
+  width: 2em;
+  left: 2em;
+  box-shadow: 0 0 0.75em 0.95em var(--satellite-shadow);
   animation: shadow 5s infinite ease-in-out;
 }
 
@@ -249,7 +383,7 @@ body {
 
   80% {
     left: 0;
-    box-shadow: 0 0 0.55em 0.75em #262938;
+    box-shadow: 0 0 0.55em 0.75em var(--satellite-shadow);
   }
 
   100% {
@@ -258,29 +392,29 @@ body {
   }
 }
 
-@keyframes test {
+@keyframes rotation {
   0%,
   100% {
-    top: 4em;
-    left: 3em;
-    box-shadow: -2em 0 5em 0.5em rgb(198 131 100 / 40%);
+    top: -4em;
+    left: -4em;
+    box-shadow: -2em 0 5em 0.5em var(--rotation-first);
     z-index: 2;
   }
   25% {
-    box-shadow: 0 0 3em 1em #412104b5;
+    box-shadow: 0 0 3em 1em var(--rotation-second);
   }
   75% {
-    box-shadow: 0 0 3em 1em black;
+    box-shadow: 0 0 3em 1em var(--rotation-third);
   }
 
   48% {
     z-index: 2;
   }
   50% {
-    left: 20em;
-    top: 20em;
+    left: 14em;
+    top: 14em;
     z-index: -1;
-    box-shadow: 2em 0 5em 0.5em rgb(132 90 70 / 51%);
+    box-shadow: 2em 0 5em 0.5em var(--rotation-fourth);
   }
 
   99% {
@@ -288,26 +422,125 @@ body {
   }
 }
 
-.mountain-two {
-  width: 70%;
-  height: 30%;
+.fire {
+  background: radial-gradient(var(--clr3) 24%, 24%, var(--clr4));
+  top: 160px;
+  border-radius: 100% 0 100% 100%;
+  box-shadow: -2vmin 2vmin 8vmin -1vmin var(--clr2),
+    0 0 0 1vmin var(--clr1) inset, 0 0 0 2vmin var(--clr2) inset,
+    0 0 0 3vmin var(--clr3) inset;
+  height: 6vmin;
+  right: 500px;
+  margin: 0 0 0 -7vmin;
   position: absolute;
-  bottom: 35%;
-  right: 0%;
-  background: #5e4d89;
-  -webkit-clip-path: polygon(63% 10%, 100% 40%, 100% 100%, 0% 100%);
-  clip-path: polygon(63% 10%, 100% 40%, 100% 100%, 0% 100%);
-  z-index: 2;
+  transform: rotate(-40deg);
+  width: 6vmin;
+  z-index: 4;
 }
 
-.mountain-four {
-  width: 70%;
-  height: 25%;
+.capybara {
   position: absolute;
-  bottom: 35%;
-  right: 0%;
-  background: #513c89;
-  -webkit-clip-path: polygon(82% 52%, 0% 100%, 100% 100%);
-  clip-path: polygon(82% 52%, 0% 100%, 100% 100%);
-  z-index: 4;
+  perspective: 500px;
+  transform: rotate(-8deg) rotateY(30deg);
+  top: 200px;
+  left: 600px;
+}
+
+.head {
+  position: absolute;
+  top: 140px;
+  right: 435px;
+  width: 40px;
+  height: 25px;
+  background: #c5a284;
+  transform: rotate(8deg);
+  border-radius: 57% 19% 34% 63% / 30% 27% 61% 41%;
+}
+
+.eye {
+  position: relative;
+  top: 6px;
+  left: 24px;
+  border: 2px solid;
+  width: 5px;
+  border-radius: 12px;
+  height: 0;
+}
+
+.ear {
+  position: relative;
+  bottom: 8px;
+  left: 34px;
+  background: #c5a284;
+  width: 10px;
+  height: 8px;
+  border-radius: 100% 40% 76% 41% / 87% 50% 60% 35%;
+}
+
+.nose {
+  position: relative;
+  bottom: 10px;
+  right: 1px;
+  width: 10px;
+  height: 15px;
+  border: 0.5px solid;
+  background: #b99879;
+  transform: rotate(1deg);
+  border-radius: 70% 27% 56% 50% / 50% 40% 81% 45%;
+}
+
+.nose__tip {
+  position: relative;
+  border: 0.5px solid;
+  top: 4px;
+  left: 3px;
+  width: 3px;
+  height: 3px;
+  background: #805b3b;
+  border-radius: 87% 44% 56% 44% / 53% 31% 47% 36%;
+}
+
+.body {
+  position: relative;
+  background: #c5a284;
+  width: 60px;
+  height: 40px;
+  top: 160px;
+  right: 400px;
+  border-radius: 61% 66% 79% 105%;
+  transform: rotate(5deg);
+  border-color: #7a5229 #7a5229 #7a5229 transparent;
+}
+
+.leg1 {
+  position: relative;
+  background-color: #c5a284;
+  transform: rotate(-45deg);
+  border-radius: 12px;
+  top: 25px;
+  right: 10px;
+  width: 35px;
+  height: 8px;
+}
+
+.leg2 {
+  position: relative;
+  background-color: #c5a284;
+  transform: rotate(-45deg);
+  border-radius: 12px;
+  top: 25px;
+  right: 1px;
+  width: 35px;
+  height: 8px;
+}
+
+.leg3 {
+  position: relative;
+  background-color: #c5a284;
+  border-radius: 12px;
+  transform: rotate(-45deg);
+  top: 20px;
+  left: 25px;
+  width: 35px;
+  height: 8px;
 }
