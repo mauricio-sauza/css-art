@@ -443,7 +443,7 @@ body {
   perspective: 500px;
   transform: rotate(-8deg) rotateY(30deg);
   top: 200px;
-  left: 600px;
+  left: 650px;
 }
 
 .head {
@@ -455,6 +455,33 @@ body {
   background: #c5a284;
   transform: rotate(8deg);
   border-radius: 57% 19% 34% 63% / 30% 27% 61% 41%;
+  transition: transform 1s ease-in-out;
+}
+
+.capybara:hover .head {
+  transform: rotate(-40deg) translate(-18px, 10px);
+}
+
+.capybara:hover .head .eye {
+  border: 1px solid;
+}
+
+.capybara:hover .body {
+  transform: translateY(10px);
+}
+
+.capybara:hover .leg1 {
+  transform: rotate(0deg);
+}
+
+.capybara:hover .leg2 {
+  transform: rotate(0deg);
+}
+
+.capybara:hover .leg3 {
+  transform: rotate(-10deg);
+  top: 15px;
+  right: 15px;
 }
 
 .eye {
@@ -510,6 +537,7 @@ body {
   border-radius: 61% 66% 79% 105%;
   transform: rotate(5deg);
   border-color: #7a5229 #7a5229 #7a5229 transparent;
+  transition: transform 1s ease-in-out;
 }
 
 .leg1 {
@@ -521,6 +549,7 @@ body {
   right: 10px;
   width: 35px;
   height: 8px;
+  transition: transform 1s ease-in-out;
 }
 
 .leg2 {
@@ -532,6 +561,7 @@ body {
   right: 1px;
   width: 35px;
   height: 8px;
+  transition: transform 1s ease-in-out;
 }
 
 .leg3 {
@@ -543,4 +573,5 @@ body {
   left: 25px;
   width: 35px;
   height: 8px;
+  transition: transform 1s ease-in-out;
 }
